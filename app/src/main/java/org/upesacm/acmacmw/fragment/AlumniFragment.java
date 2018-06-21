@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -143,7 +144,8 @@ public class AlumniFragment extends Fragment {
 
         public void setImage(Context ctx, String Image) {
             ImageView post_image = itemView.findViewById(R.id.imageView);
-            Picasso.get().load(Image).into(post_image);
+            Glide.with(ctx).load(Image).into(post_image);
+           // Picasso.get().load(Image).into(post_image);
         }
     }
 }
